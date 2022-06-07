@@ -12,6 +12,7 @@ const getToken = () => {
   if (timeSinceLastLogin < thirtyMinutes) {
     return localStorage.getItem('token');
   }
+  return false;
 };
 
 export const signupUser = (credentials) => (dispatch) => fetch('http://localhost:3001/v1/signup', {
