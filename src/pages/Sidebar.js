@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import * as TiSocial from 'react-icons/ti';
+import { useDispatch } from 'react-redux';
 import logo from '../images/logo.png';
+import { logoutUser } from '../redux/actions/auth';
 
 function Sidebar() {
   const [sidebar, setSidebar] = useState(false);
   const showSidebar = () => setSidebar(!sidebar);
+  const dispatch = useDispatch();
+  const logout = () => dispatch(logoutUser());
 
   return (
     <div className="text-slate-600 h-screen absolute sm:relative inset-x-0 sm:border-r-2 ">
@@ -55,7 +59,6 @@ function Sidebar() {
               ['RESERVATIONS', '/reservations'],
               ['ADD HOUSES', '/add_house'],
               ['DELETE HOUSES', '/delete_house'],
-              ['LOGOUT', '/logout'],
             ].map(([title, url]) => (
               <Link
                 to={url}
@@ -66,6 +69,13 @@ function Sidebar() {
                 {title}
               </Link>
             ))}
+            <Link
+              to="/"
+              onClick={logout}
+              className="text-sm font-semibold px-3 py-2 hover:bg-lime-500 hover:text-white w-full"
+            >
+              LOGOUT
+            </Link>
           </li>
         </ul>
 
