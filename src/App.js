@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login loggedIn={loggedIn} />} />
         <Route path="/signup" element={<h1>Sign Up Page</h1>} />
         <Route element={<ProtectedRoutes isAllowed={loggedIn} authChecked={authChecked} redirectPath="/login" />}>
           <Route path="/" element={<h1>Houses Page</h1>} />
