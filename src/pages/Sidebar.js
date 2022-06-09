@@ -70,7 +70,7 @@ function Sidebar() {
                 to={url}
                 key={title}
                 onClick={showPage}
-                className="text-sm font-semibold px-3 py-2 hover:bg-lime-500 hover:text-white w-full"
+                className="focus-within:bg-lime-500 focus-within:text-white text-sm font-semibold px-3 py-2 hover:bg-lime-500 w-full hover:text-white"
               >
                 {title}
               </Link>
