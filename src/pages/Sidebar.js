@@ -8,11 +8,17 @@ import { logoutUser } from '../redux/actions/auth';
 function Sidebar() {
   const [sidebar, setSidebar] = useState(false);
   const showSidebar = () => setSidebar(!sidebar);
+  const showPage = () => {
+    if (sidebar) setSidebar(!sidebar);
+  };
   const dispatch = useDispatch();
-  const logout = () => dispatch(logoutUser());
+  const logout = () => {
+    showPage();
+    dispatch(logoutUser());
+  };
 
   return (
-    <div className="text-slate-600 h-screen absolute sm:relative inset-x-0 sm:border-r-2 ">
+    <div className="text-slate-600 h-screen sm:border-r-2 ">
 
       <button type="button" className="sm:hidden m-3 absolute" onClick={showSidebar}>
         {!sidebar ? (
@@ -63,7 +69,7 @@ function Sidebar() {
               <Link
                 to={url}
                 key={title}
-                onClick={showSidebar}
+                onClick={showPage}
                 className="text-sm font-semibold px-3 py-2 hover:bg-lime-500 hover:text-white w-full"
               >
                 {title}
