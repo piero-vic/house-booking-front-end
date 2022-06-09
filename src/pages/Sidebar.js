@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import * as TiSocial from 'react-icons/ti';
 import { useDispatch } from 'react-redux';
 import logo from '../images/logo.png';
@@ -55,9 +55,9 @@ function Sidebar() {
           : 'flex flex-col h-full bg-white pt-7 sm:pt-0'
       }
       >
-        <Link className="m-4 hidden sm:flex" to="/">
+        <NavLink className="m-4 hidden sm:flex" to="/">
           <img src={logo} alt="logo" width={100} />
-        </Link>
+        </NavLink>
         <ul className="sm:ml-2 pt-2 pb-3 mt-6 text-center">
           <li className="flex flex-col">
             {[
@@ -66,22 +66,22 @@ function Sidebar() {
               ['ADD HOUSES', '/add_house'],
               ['DELETE HOUSES', '/delete_house'],
             ].map(([title, url]) => (
-              <Link
+              <NavLink
                 to={url}
                 key={title}
                 onClick={showPage}
-                className="text-sm font-semibold px-3 py-2 hover:bg-lime-500 hover:text-white w-full"
+                className={({ isActive }) => (isActive ? 'bg-lime-500 text-white text-sm font-semibold px-3 py-2 hover:bg-lime-500 w-full hover:text-white' : 'text-sm font-semibold px-3 py-2 hover:bg-lime-500 w-full hover:text-white')}
               >
                 {title}
-              </Link>
+              </NavLink>
             ))}
-            <Link
+            <NavLink
               to="/"
               onClick={logout}
               className="text-sm font-semibold px-3 py-2 hover:bg-lime-500 hover:text-white w-full"
             >
               LOGOUT
-            </Link>
+            </NavLink>
           </li>
         </ul>
 
