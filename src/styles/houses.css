@@ -32,28 +32,38 @@ body {
   align-items: center;
 }
 
+.items {
+  width: 100%;
+  display: flex;
+  gap: 7rem;
+  border: 1px solid green;
+}
+
 .header {
    margin-bottom: 9.6rem;
    margin-top: 1.2rem;
 }
 
+
 .slider-items {
   display: flex;
   gap: 7rem;
   max-width: 100%;
-  overflow: hidden;
-
+  overflow-x: hidden;
+  border: 1px solid blue;
 }
 
-.house-card{
+.house-card {
 display: flex;
 flex-direction: column;
 align-items: center;
+border: 1px solid red;
+width: 200px;
 }
 
 .wrap-img {
-  width: 180%;
-  height: 120%;
+  width: 100%;
+  height: 100%;
   margin-bottom: 8.6rem;
 }
 

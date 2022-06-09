@@ -1,16 +1,17 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { VscTriangleLeft, VscTriangleRight } from 'react-icons/vsc';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { displayHouses } from '../redux/actions/houses';
-// import BtnSliderRight from '../components/BtnSliderRight';
-// import BtnSliderLeft from '../components/BtnSliderLeft';
 import '../styles/houses.css';
 import Social from '../components/Social';
 
 const Houses = () => {
   const houses = useSelector((state) => state.HousesReducer);
-  const [slideIndex, setSlideIndex] = useState(1);
+  const [slideIndex, setSlideIndex] = useState(0);
   const dispatch = useDispatch();
+  const lenghtHouses = houses.length;
+  const houseCard = useRef();
+  const size = 50;
 
   useEffect(() => {
     if (houses.length === 0) {
@@ -19,19 +20,17 @@ const Houses = () => {
   }, []);
 
   const nextSlide = () => {
-    if (slideIndex !== houses.length) {
-      setSlideIndex(slideIndex + 1);
-    } else if (slideIndex === houses.length) {
-      setSlideIndex(1);
-    }
+    if (slideIndex === lenghtHouses - 1) return;
+    const current = slideIndex + 1;
+    houseCard.current.style.transform = `translateX(${-size * current}px)`;
+    setSlideIndex(current);
   };
 
   const prevSlide = () => {
-    if (slideIndex !== 1) {
-      setSlideIndex(slideIndex - 1);
-    } else if (slideIndex === 1) {
-      setSlideIndex(houses.length);
-    }
+    if (slideIndex === 0) return;
+    const current = slideIndex - 1;
+    houseCard.current.style.transform = `translateX(${-size * current}px)`;
+    setSlideIndex(current);
   };
 
   return (
@@ -42,9 +41,10 @@ const Houses = () => {
       </div>
 
       <div className="slider-items">
+        <div ref={houseCard} className="items">
         {
            houses.map((house) => (
-             <div key={house.id} className="house-card">
+             <div key={house.id}  className="house-card">
                <div className="wrap-img">
                  <img className="img" src={house.image} alt="house-img" />
                </div>
@@ -67,6 +67,7 @@ const Houses = () => {
              </div>
            ))
         }
+        </div>
         <div className="btn-background-prev">
           <button
             type="button"
