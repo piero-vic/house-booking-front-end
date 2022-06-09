@@ -14,7 +14,7 @@ const reservations = () => {
   const { data } = useSelector((state) => state.reservations);
 
   return (
-    <div className="conainer w-4/5 mx-auto">
+    <div className="container w-4/5 mx-auto">
       <DataTable
         title="Reservations"
         pagination
