@@ -5,7 +5,7 @@ const setToken = (token) => {
   localStorage.setItem('lastLoginTime', new Date(Date.now()).getTime());
 };
 
-const getToken = () => {
+export const getToken = () => {
   const now = new Date(Date.now()).getTime();
   const thirtyMinutes = 1000 * 60 * 30;
   const timeSinceLastLogin = now - localStorage.getItem('lastLoginTime');
