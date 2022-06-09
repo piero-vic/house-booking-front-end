@@ -1,17 +1,17 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { useForm } from 'react-hook-form';
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { useNavigate, Link } from 'react-router-dom';
+import { Navigate, Link } from 'react-router-dom';
 import { signupUser } from '../redux/actions/auth';
 
-const Signup = () => {
+const Signup = ({ loggedIn }) => {
+  if (loggedIn) return <Navigate to="/" replace />;
+
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
-  const onFormSubmit = (data) => {
-    dispatch(signupUser(data));
-    navigate('/');
-  };
+
+  const onFormSubmit = (data) => dispatch(signupUser(data));
 
   return (
     <main className="min-h-screen min-w-full bg-center bg-cover bg-no-repeat bg-login">
@@ -57,6 +57,10 @@ const Signup = () => {
       </div>
     </main>
   );
+};
+
+Signup.propTypes = {
+  loggedIn: PropTypes.bool.isRequired,
 };
 
 export default Signup;

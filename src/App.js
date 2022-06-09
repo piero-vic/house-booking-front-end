@@ -17,7 +17,7 @@ function App() {
         <div className="flex-1">
           <Routes>
             <Route path="/login" element={<Login loggedIn={loggedIn} />} />
-            <Route path="/signup" element={<Signup />} />
+            <Route path="/signup" element={<Signup loggedIn={loggedIn} />} />
             <Route element={<ProtectedRoutes isAllowed={loggedIn} authChecked={authChecked} redirectPath="/login" />}>
               <Route path="/" element={<h1>Houses Page</h1>} />
               <Route path="/reservations" element={<Reservations />} />
