@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-props-no-spreading */
-
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
@@ -28,7 +27,7 @@ const Login = ({ loggedIn }) => {
           {errors.email && <p className="text-red-700 font-bold mb-1 text-center">Email is required</p>}
           <form className="flex flex-col gap-5 items-center" onSubmit={handleSubmit(onFormSubmit)}>
             <div className="w-full">
-              <input className="w-full bg-white py-2 px-4 rounded-3xl" type="text" placeholder="Email" {...register('email', { required: 'Email is required' })} />
+              <input className="w-full bg-white py-2 px-4 rounded-3xl" type="email" placeholder="Email" {...register('email', { required: 'Email is required' })} />
             </div>
             <div className="w-full">
               <input className="w-full bg-white py-2 px-4 rounded-3xl" type="password" placeholder="Password" {...register('password', { required: 'Password is required' })} />

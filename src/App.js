@@ -3,6 +3,7 @@ import ProtectedRoutes from './components/ProtectedRoutes';
 import Sidebar from './pages/Sidebar';
 import useAuth from './hooks/useAuth';
 import Login from './pages/Login';
+import Signup from './pages/Signup';
 import Reservations from './pages/reservations';
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
         <div className="flex-1">
           <Routes>
             <Route path="/login" element={<Login loggedIn={loggedIn} />} />
-            <Route path="/signup" element={<h1>Sign Up Page</h1>} />
+            <Route path="/signup" element={<Signup />} />
             <Route element={<ProtectedRoutes isAllowed={loggedIn} authChecked={authChecked} redirectPath="/login" />}>
               <Route path="/" element={<h1>Houses Page</h1>} />
               <Route path="/reservations" element={<Reservations />} />
