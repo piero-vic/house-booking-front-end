@@ -5,6 +5,8 @@ import useAuth from './hooks/useAuth';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Reservations from './pages/reservations';
+import HouseDetails from './components/HouseDetails';
+// import Houses from './pages/Houses';
 
 function App() {
   const { authChecked, loggedIn } = useAuth();
@@ -20,6 +22,9 @@ function App() {
             <Route path="/signup" element={<Signup loggedIn={loggedIn} />} />
             <Route element={<ProtectedRoutes isAllowed={loggedIn} authChecked={authChecked} redirectPath="/login" />}>
               <Route path="/" element={<h1>Houses Page</h1>} />
+              {/* <Route path="/houses" element={<Houses />} /> */}
+              <Route path="/houses/:id" element={<HouseDetails />} />
+              <Route path="/reserve" element={<h1>Reserve Page</h1>} />
               <Route path="/reservations" element={<Reservations />} />
               <Route path="/add_house" element={<h1>AddHouse Page</h1>} />
               <Route path="/delete_house" element={<h1>DeleteHouse Page</h1>} />
