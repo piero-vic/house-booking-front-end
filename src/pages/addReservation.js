@@ -1,17 +1,19 @@
 /* eslint-disable react/jsx-props-no-spreading */
-// import { useForm } from 'react-hook-form';
-// import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
-// import addReservationData from '../redux/actions/reservations';
+import { useForm } from 'react-hook-form';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useParams } from 'react-router-dom';
+import addReservationData from '../redux/actions/reservations';
 
-const AddReservation = () =>
-// const { reserve, handleReserve } = useForm();
-// const dispatch = useDispatch();
+const AddReservation = () => {
+  const { handleReserve } = useForm();
+  const { currentUser } = useSelector((state) => state.auth);
+  const { id } = useParams();
+  const dispatch = useDispatch();
 
-//   const onClickSubmit = (data) => {
-//     dispatch(addReservationData(data));
-//   };
-//   onSubmit={handleReserve(onClickSubmit)}
+  const onClickSubmit = (data) => {
+    dispatch(addReservationData({ ...data, user_id: currentUser.id, house_id: id }));
+  };
+
   (
     <main className="min-h-screen min-w-full bg-center bg-cover bg-no-repeat bg-login">
       <div className="min-h-screen min-w-full grid place-items-center bg-lime-500 bg-opacity-80">
@@ -19,7 +21,7 @@ const AddReservation = () =>
           <div className="border-b border-b-white p-5 mb-5 mx-auto w-10/12">
             <h2 className="text-white text-center font-bold text-4xl">Book an Appointment</h2>
           </div>
-          <form className="flex flex-col gap-5 items-center">
+          <form className="flex flex-col gap-5 items-center" onSubmit={handleReserve(onClickSubmit)}>
             <div className="w-full">
               <input
                 className="w-full bg-white py-2 px-4 rounded-3xl"
@@ -34,4 +36,6 @@ const AddReservation = () =>
       </div>
     </main>
   );
+};
+
 export default AddReservation;

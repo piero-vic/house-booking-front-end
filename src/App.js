@@ -22,7 +22,8 @@ function App() {
             <Route element={<ProtectedRoutes isAllowed={loggedIn} authChecked={authChecked} redirectPath="/login" />}>
               <Route path="/" element={<h1>Houses Page</h1>} />
               <Route path="/reservations" element={<Reservations />} />
-              <Route path="/add_house" element={<AddReservation />} />
+              <Route path="/add_house" element={<h1> add hosue</h1>} />
+              <Route path="/houses/:id/reserve" element={<AddReservation />} />
               <Route path="/delete_house" element={<h1>DeleteHouse Page</h1>} />
             </Route>
           </Routes>

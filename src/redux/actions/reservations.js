@@ -20,24 +20,24 @@ const getReservations = () => (dispatch) => fetch('http://localhost:3001/v1/rese
   });
 });
 
-// const addReservationData = (date) => (dispatch) => fetch('http://localhost:3001/v1/reservations', {
-//   method: 'POST',
-//   headers: {
-//     Accept: 'application/json',
-//     'Content-Type': 'application/json',
-//     Authorization: getToken(),
-//   },
-//   body: JSON.stringify({ date }),
-// }).then((res) => {
-//   if (res.ok) {
-//     return res
-//       .json()
-//       .then((reservations) => dispatch({ type: ADD_NEW_RESERVATION, payload: reservations }));
-//   }
-//   return res.json().then((errors) => {
-//     dispatch({ type: NOT_AUTHENTICATED });
-//     return Promise.reject(errors);
-//   });
-// });
+const addReservationData = (date) => (dispatch) => fetch('http://localhost:3001/v1/reservations', {
+  method: 'POST',
+  headers: {
+    Accept: 'application/json',
+    'Content-Type': 'application/json',
+    Authorization: getToken(),
+  },
+  body: JSON.stringify(date),
+}).then((res) => {
+  if (res.ok) {
+    return res
+      .json()
+      .then((reservations) => dispatch({ type: ADD_NEW_RESERVATION, payload: reservations }));
+  }
+  return res.json().then((errors) => {
+    dispatch({ type: NOT_AUTHENTICATED });
+    return Promise.reject(errors);
+  });
+});
 
-export default getReservations;
+export default { getReservations, addReservationData };
