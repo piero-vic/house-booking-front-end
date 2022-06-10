@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import * as TiSocial from 'react-icons/ti';
 import { useDispatch } from 'react-redux';
 import logo from '../images/logo.png';
@@ -15,6 +15,11 @@ function Sidebar() {
   const logout = () => {
     showPage();
     dispatch(logoutUser());
+  };
+
+  const usePathname = () => {
+    const location = useLocation();
+    return location.pathname.includes('/houses/');
   };
 
   return (
@@ -60,8 +65,15 @@ function Sidebar() {
         </NavLink>
         <ul className="sm:ml-2 pt-2 pb-3 mt-6 text-center">
           <li className="flex flex-col">
+            <NavLink
+              to="/"
+              key="HOUSES"
+              onClick={showPage}
+              className={({ isActive }) => (isActive || usePathname() ? 'bg-lime-500 text-white text-base sm:text-left font-semibold px-3 py-2 hover:bg-lime-500 w-full hover:text-white' : 'text-base sm:text-left font-semibold px-3 py-2 hover:bg-lime-500 w-full hover:text-white')}
+            >
+              HOUSES
+            </NavLink>
             {[
-              ['HOUSES', '/'],
               ['RESERVATIONS', '/reservations'],
               ['ADD HOUSES', '/add_house'],
               ['DELETE HOUSES', '/delete_house'],
@@ -70,7 +82,7 @@ function Sidebar() {
                 to={url}
                 key={title}
                 onClick={showPage}
-                className={({ isActive }) => (isActive ? 'bg-lime-500 text-white text-sm font-semibold px-3 py-2 hover:bg-lime-500 w-full hover:text-white' : 'text-sm font-semibold px-3 py-2 hover:bg-lime-500 w-full hover:text-white')}
+                className={({ isActive }) => (isActive ? 'bg-lime-500 text-white text-base sm:text-left font-semibold px-3 py-2 hover:bg-lime-500 w-full hover:text-white' : 'text-base sm:text-left font-semibold px-3 py-2 hover:bg-lime-500 w-full hover:text-white')}
               >
                 {title}
               </NavLink>
@@ -78,7 +90,7 @@ function Sidebar() {
             <NavLink
               to="/"
               onClick={logout}
-              className="text-sm font-semibold px-3 py-2 hover:bg-lime-500 hover:text-white w-full"
+              className="text-base sm:text-left font-semibold px-3 py-2 hover:bg-lime-500 hover:text-white w-full"
             >
               LOGOUT
             </NavLink>
