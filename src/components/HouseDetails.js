@@ -14,7 +14,7 @@ const HouseDetails = () => {
   []);
 
   return (
-    <div className="w-4/5 mx-auto gap-6 mt-10 sm:mt-24 sm:flex">
+    <div className="w-11/12 mx-auto gap-6 mt-10 sm:mt-24 sm:flex">
       <img className="h-4/5 w-4/5 mb-5 sm:min-w-0 min-w-full" src={house.image} alt="house" />
       <div className="items-start">
         <div className="text-right mb-4 text-gray-800">
@@ -22,7 +22,7 @@ const HouseDetails = () => {
           <div className="text-xs font-extrabold">{house.city}</div>
         </div>
         {Object.keys(house).map((keyName, i) => (
-          <table className={`${(i === 0 || i === 1) ? 'hidden' : 'even:bg-stone-200 text-xs text-slate-600 font-medium py-1 px-2 last-of-type:hidden relative flex min-w-full w-52'}`} key={keyName}>
+          <table className={`${(i === 0 || i === 1) ? 'hidden' : 'even:bg-stone-200 text-xs text-slate-600 font-medium py-1 px-2 last-of-type:hidden relative flex min-w-full w-40'}`} key={keyName}>
             <td>
               {keyName.charAt(0).toUpperCase() + keyName.slice(1).replaceAll('_', ' ')}
             </td>

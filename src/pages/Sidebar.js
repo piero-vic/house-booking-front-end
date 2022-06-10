@@ -69,7 +69,7 @@ function Sidebar() {
               to="/"
               key="HOUSES"
               onClick={showPage}
-              className={({ isActive }) => (isActive || usePathname() ? 'bg-lime-500 text-white text-base sm:text-left font-semibold px-3 py-2 hover:bg-lime-500 w-full hover:text-white' : 'text-base sm:text-left font-semibold px-3 py-2 hover:bg-lime-500 w-full hover:text-white')}
+              className={({ isActive }) => (isActive || usePathname() ? 'bg-lime-500 text-white text-sm sm:text-left font-semibold px-3 py-2 hover:bg-lime-500 w-full hover:text-white' : 'text-sm sm:text-left font-semibold px-3 py-2 hover:bg-lime-500 w-full hover:text-white')}
             >
               HOUSES
             </NavLink>
@@ -82,7 +82,7 @@ function Sidebar() {
                 to={url}
                 key={title}
                 onClick={showPage}
-                className={({ isActive }) => (isActive ? 'bg-lime-500 text-white text-base sm:text-left font-semibold px-3 py-2 hover:bg-lime-500 w-full hover:text-white' : 'text-base sm:text-left font-semibold px-3 py-2 hover:bg-lime-500 w-full hover:text-white')}
+                className={({ isActive }) => (isActive ? 'bg-lime-500 text-white text-sm sm:text-left font-semibold px-3 py-2 hover:bg-lime-500 w-full hover:text-white' : 'text-sm sm:text-left font-semibold px-3 py-2 hover:bg-lime-500 w-full hover:text-white')}
               >
                 {title}
               </NavLink>
@@ -90,7 +90,7 @@ function Sidebar() {
             <NavLink
               to="/"
               onClick={logout}
-              className="text-base sm:text-left font-semibold px-3 py-2 hover:bg-lime-500 hover:text-white w-full"
+              className="text-sm sm:text-left font-semibold px-3 py-2 hover:bg-lime-500 hover:text-white w-full"
             >
               LOGOUT
             </NavLink>
