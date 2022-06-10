@@ -20,6 +20,7 @@ const fetchData = async (id) => {
 export const displayHouse = (id) => async (dispatch) => {
   const { data } = await fetchData(id);
   const HousesTemp = {
+    id: data.id,
     address: data.address,
     city: data.city,
     price: `${data.price}$`,
