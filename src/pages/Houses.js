@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { VscTriangleLeft, VscTriangleRight } from 'react-icons/vsc';
 import { useEffect, useState, useRef } from 'react';
 import { displayHouses } from '../redux/actions/houses';
-import '../styles/houses.css';
+// import '../styles/houses.css';
 import Social from '../components/Social';
 
 const Houses = () => {
@@ -11,7 +11,7 @@ const Houses = () => {
   const dispatch = useDispatch();
   const lenghtHouses = houses.length;
   const houseCard = useRef();
-  const size = 50;
+  const size = 250;
 
   useEffect(() => {
     if (houses.length === 0) {
@@ -34,41 +34,43 @@ const Houses = () => {
   };
 
   return (
-    <div className="container wrap">
-      <div className="header">
-        <h2 className="heading-secondary">YOUR FAVORITE HOUSES </h2>
-        <p className="paraghraph">Please select a house model</p>
+    <div className="container">
+      <div className="mt-12 mb-10 sm:text-center">
+        <h2 className="font-bold text-2xl mb-2 ml-8 ">YOUR FAVORITE HOUSES </h2>
+        <p className="text-sm font-semibold ml-20 text-neutral-300 sm:ml-9">Please select a house model</p>
       </div>
 
-      <div className="slider-items">
-        <div ref={houseCard} className="items">
-        {
+      <div className="flex gap-7 overflow-hidden w-72 sm:max-w-screen-lg mx-auto sm:w-4/5">
+        <div ref={houseCard} className="flex gap-7 w-full">
+          {
            houses.map((house) => (
-             <div key={house.id}  className="house-card">
-               <div className="wrap-img">
-                 <img className="img" src={house.image} alt="house-img" />
+             <div key={house.id} className="flex flex-col items-center">
+               <div className="w-72">
+                 <img className="rounded-md" src={house.image} alt="house-img" />
                </div>
-               <div>
-                 <h3 className="heading-tertiary">
-                   Price:
-                   {house.price}
-                   $
-                 </h3>
-                 <p className="heading-tertiary">
-                   City:
-                   {house.city}
-                 </p>
-                 <p className="heading-tertiary">
+               <div className="flex flex-col items-center">
+                 <p className="text-base font-bold mt-3 mb-4">
                    Address:
                    {house.address}
                  </p>
+                 <div className="flex gap-4 justify-center">
+                   <p className="text-base font-bold  text-neutral-300">
+                     Price:
+                     {house.price}
+                     $
+                   </p>
+                   <p className="text-base font-bold  text-neutral-300">
+                     City:
+                     {house.city}
+                   </p>
+                 </div>
                </div>
                <Social />
              </div>
            ))
         }
         </div>
-        <div className="btn-background-prev">
+        <div className="bg-lime-400 content-center rounded-tl-3xl rounded-bl-3xl absolute right-0 top-1/3 pl-2 w-9 h-6 sm:w-20 sm:h-11">
           <button
             type="button"
             className="btn-slide"
@@ -76,13 +78,11 @@ const Houses = () => {
           >
             <VscTriangleLeft className="prev" />
           </button>
-          {/* <BtnSliderLeft moveSlide={prevSlide} /> */}
         </div>
-        <div className="btn-background-next">
-          {/* <BtnSliderRight moveSlide={nextSlide} /> */}
+        <div className="bg-slate-300 content-center rounded-br-3xl rounded-tr-2xl absolute top-1/3 pl-2 w-9 h-6 left-0 sm:w-20 sm:h-11 sm:left-72">
           <button
             type="button"
-            className="btn-slide"
+            className="sm:text-justify"
             onClick={nextSlide}
           >
             <VscTriangleRight className="next" />
