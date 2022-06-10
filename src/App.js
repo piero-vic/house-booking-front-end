@@ -4,7 +4,9 @@ import Sidebar from './pages/Sidebar';
 import useAuth from './hooks/useAuth';
 import Houses from './pages/Houses';
 import Login from './pages/Login';
+import Signup from './pages/Signup';
 import Reservations from './pages/reservations';
+import HouseDetails from './components/HouseDetails';
 
 function App() {
   const { authChecked, loggedIn } = useAuth();
@@ -17,9 +19,11 @@ function App() {
         <div className="flex-1">
           <Routes>
             <Route path="/login" element={<Login loggedIn={loggedIn} />} />
-            <Route path="/signup" element={<h1>Sign Up Page</h1>} />
+            <Route path="/signup" element={<Signup loggedIn={loggedIn} />} />
             <Route element={<ProtectedRoutes isAllowed={loggedIn} authChecked={authChecked} redirectPath="/login" />}>
               <Route path="/" element={<Houses />} />
+              <Route path="/houses/:id" element={<HouseDetails />} />
+              <Route path="/reserve" element={<h1>Reserve Page</h1>} />
               <Route path="/reservations" element={<Reservations />} />
               <Route path="/add_house" element={<h1>AddHouse Page</h1>} />
               <Route path="/delete_house" element={<h1>DeleteHouse Page</h1>} />
