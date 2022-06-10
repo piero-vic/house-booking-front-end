@@ -1,4 +1,4 @@
-import { NOT_AUTHENTICATED, GET_MY_RESERVATIONS, ADD_NEW_RESERVATION } from '.';
+import { NOT_AUTHENTICATED, GET_MY_RESERVATIONS } from '.';
 import { getToken } from './auth';
 
 const getReservations = () => (dispatch) => fetch('http://localhost:3001/v1/reservations', {
@@ -40,4 +40,4 @@ const getReservations = () => (dispatch) => fetch('http://localhost:3001/v1/rese
 //   });
 // });
 
-export default { getReservations }
+export default getReservations;

@@ -8,10 +8,10 @@ const AddReservation = () =>
 // const { reserve, handleReserve } = useForm();
 // const dispatch = useDispatch();
 
-  // const onClickSubmit = (data) => {
-  //   dispatch(addReservationData(data));
-  // };
-  // onSubmit={handleReserve(onClickSubmit)}
+//   const onClickSubmit = (data) => {
+//     dispatch(addReservationData(data));
+//   };
+//   onSubmit={handleReserve(onClickSubmit)}
   (
     <main className="min-h-screen min-w-full bg-center bg-cover bg-no-repeat bg-login">
       <div className="min-h-screen min-w-full grid place-items-center bg-lime-500 bg-opacity-80">
@@ -27,14 +27,6 @@ const AddReservation = () =>
                 placeholder="XX/0X/XXXX"
               />
             </div>
-            {/* <div className="w-full">
-              <input
-                className="w-full bg-white py-2 px-4 rounded-3xl"
-                type="text"
-                placeholder="city"
-                {...reserve('city', { required: 'City is required' })}
-              />
-            </div> */}
             <input className="w-1/2 bg-lime-500 text-white py-2 px-4 border-2 cursor-pointer border-white rounded-3xl font-bold" type="submit" value="Book an Appointement" />
             <Link className="w-1/2 bg-white text-lime-500 py-2 px-4 border-2 border-lime-500 rounded-3xl font-bold text-center" to="/reservations">Your Reservations</Link>
           </form>
