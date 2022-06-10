@@ -1,8 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { VscTriangleLeft, VscTriangleRight } from 'react-icons/vsc';
 import { useEffect, useState, useRef } from 'react';
 import { displayHouses } from '../redux/actions/houses';
-// import '../styles/houses.css';
 import Social from '../components/Social';
 
 const Houses = () => {
@@ -44,29 +44,31 @@ const Houses = () => {
         <div ref={houseCard} className="flex gap-7 w-full">
           {
            houses.map((house) => (
-             <div key={house.id} className="flex flex-col items-center">
-               <div className="w-72">
-                 <img className="rounded-md" src={house.image} alt="house-img" />
-               </div>
+             <Link key={house.id} to={`/houses/${house.id}`}>
                <div className="flex flex-col items-center">
-                 <p className="text-base font-bold mt-3 mb-4">
-                   Address:
-                   {house.address}
-                 </p>
-                 <div className="flex gap-4 justify-center">
-                   <p className="text-base font-bold  text-neutral-300">
-                     Price:
-                     {house.price}
-                     $
-                   </p>
-                   <p className="text-base font-bold  text-neutral-300">
-                     City:
-                     {house.city}
-                   </p>
+                 <div className="w-72">
+                   <img className="rounded-md" src={house.image} alt="house-img" />
                  </div>
+                 <div className="flex flex-col items-center">
+                   <p className="text-base font-bold mt-3 mb-4">
+                     Address:
+                     {house.address}
+                   </p>
+                   <div className="flex gap-4 justify-center">
+                     <p className="text-base font-bold  text-neutral-300">
+                       Price:
+                       {house.price}
+                       $
+                     </p>
+                     <p className="text-base font-bold  text-neutral-300">
+                       City:
+                       {house.city}
+                     </p>
+                   </div>
+                 </div>
+                 <Social />
                </div>
-               <Social />
-             </div>
+             </Link>
            ))
         }
         </div>
