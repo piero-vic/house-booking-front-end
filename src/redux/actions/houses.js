@@ -26,6 +26,7 @@ export const displayHouses = () => async (dispatch) => {
     price: ele.price,
     city: ele.city,
     image: ele.image,
+    userId: ele.user_id,
   }));
   dispatch(loadHouses(HousesTemp));
 };
