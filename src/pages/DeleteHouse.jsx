@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { displayHouses } from '../redux/actions/houses';
+import { displayHouses, deleteHouse } from '../redux/actions/houses';
 import PageHeading from '../components/PageHeading';
 
 const DeleteHouse = () => {
@@ -31,7 +31,11 @@ const DeleteHouse = () => {
                 <Link to={`/houses/${house.id}`} className="w-4/5 text-center flex-grow font-semibold px-5 py-2 bg-lime-500 text-white rounded-full">
                   Info
                 </Link>
-                <button type="button" className="w-4/5 text-center flex-grow font-semibold px-5 py-2 bg-red-500 text-white rounded-full">
+                <button
+                  type="button"
+                  className="w-4/5 text-center flex-grow font-semibold px-5 py-2 bg-red-500 text-white rounded-full"
+                  onClick={() => dispatch(deleteHouse(house.id))}
+                >
                   Delete
                 </button>
               </div>
