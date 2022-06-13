@@ -38,6 +38,23 @@ $ npm start
 - Twitter: [@abdelsamadsahar](https://twitter.com/AbdelSamadSahar)
 - LinkedIn: [abdel-samad-sahar](https://www.linkedin.com/in/sahar-abdel-samad/)
 
+👤 **Reem Janina**
+
+- GitHub: [@Reem-lab](https://github.com/Reem-lab)
+- Twitter: [@Rem79940127](https://twitter.com/Rem79940127)
+- LinkedIn: [reem-janina](https://www.linkedin.com/in/reem-janina-ab74ab21a/)
+
+👤 **Aime Malaika**
+- GitHub: [@aimemalaika](https://github.com/aimemalaika)
+- Twitter: [@aimemalaika](https://twitter.com/Aime_Malaika)
+- LinkedIn: [aimemalaika](https://linkedin.com/in/aimemalaika)
+
+👤 **Piero Lescano**
+
+- GitHub: [@piero-vic](https://github.com/piero-vic)
+- Twitter: [@v1ccenzo](https://twitter.com/v1ccenzo)
+- LinkedIn: [piero-lescano](https://linkedin.com/in/piero-lescano)
+
 
 ## 🤝 Contributing
 
