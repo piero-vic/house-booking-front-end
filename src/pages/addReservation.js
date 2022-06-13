@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useSelector } from 'react-redux';
 import { Link, useParams, useNavigate } from 'react-router-dom';
-import { getToken } from '../redux/actions/auth';
+import { headers, getToken } from '../utils';
 
 const ReservationForm = () => {
   const [error, setError] = useState();
@@ -16,8 +16,7 @@ const ReservationForm = () => {
     const response = await fetch('http://localhost:3001/v1/reservations', {
       method: 'POST',
       headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
+        ...headers,
         Authorization: getToken(),
       },
       body: JSON.stringify({

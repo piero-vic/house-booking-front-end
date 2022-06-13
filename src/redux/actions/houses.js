@@ -1,10 +1,5 @@
 import { LOAD_HOUSES, DELETE_HOUSE, NEW_HOUSE } from '.';
-import { getToken } from './auth';
-
-const headers = {
-  Accept: 'application/json',
-  'Content-Type': 'application/json',
-};
+import { headers, getToken } from '../../utils';
 
 export const displayHouses = () => async (dispatch) => {
   const response = await fetch('http://localhost:3001/v1/houses', {

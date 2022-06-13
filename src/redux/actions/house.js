@@ -1,13 +1,12 @@
 import { GET_HOUSE } from '.';
-import { getToken } from './auth';
+import { headers, getToken } from '../../utils';
 
 export const getHouse = (payload) => ({ type: GET_HOUSE, payload });
 
 export const displayHouse = (id) => async (dispatch) => {
   const response = await fetch(`http://localhost:3001/v1/houses/${id}`, {
     headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
+      ...headers,
       Authorization: getToken(),
     },
   });
