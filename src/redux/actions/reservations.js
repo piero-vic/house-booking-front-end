@@ -1,23 +1,20 @@
-import { NOT_AUTHENTICATED, GET_MY_RESERVATIONS } from '.';
+import { GET_MY_RESERVATIONS } from '.';
 import { getToken } from './auth';
 
-const getReservations = () => (dispatch) => fetch('http://localhost:3001/v1/reservations', {
-  method: 'GET',
-  headers: {
-    Accept: 'application/json',
-    'Content-Type': 'application/json',
-    Authorization: getToken(),
-  },
-}).then((res) => {
-  if (res.ok) {
-    return res
-      .json()
-      .then((reservations) => dispatch({ type: GET_MY_RESERVATIONS, payload: reservations }));
-  }
-  return res.json().then((errors) => {
-    dispatch({ type: NOT_AUTHENTICATED });
-    return Promise.reject(errors);
+const getReservations = () => async (dispatch) => {
+  const response = await fetch('http://localhost:3001/v1/reservations', {
+    method: 'GET',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      Authorization: getToken(),
+    },
   });
-});
+
+  if (response.ok) {
+    const { data } = await response.json();
+    dispatch({ type: GET_MY_RESERVATIONS, payload: data });
+  }
+};
 
 export default getReservations;
