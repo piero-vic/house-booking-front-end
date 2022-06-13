@@ -7,6 +7,14 @@
 
 > Rent me is a responsive app that lists houses. A user can selects a specific house, see the details page with its full description, and can click the "Reserve" button to reserve it. The user can also access the "Reserve" page from the navigation panel, add or delete a house.
 
+### Preview
+
+![This is gif of our project](To Be added)
+
+## Live Demo
+
+You can see [the app live here](To Be added)
+
 ## Back-end Repository 
 
 [Ruby on Rails](https://github.com/Reem-lab/house-booking-back-end)
