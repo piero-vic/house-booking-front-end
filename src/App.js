@@ -14,7 +14,7 @@ function App() {
   return (
     <Router>
       <div className={loggedIn ? 'sm:flex' : null}>
-        <div className={!loggedIn ? 'hidden' : 'absolute inset-0 sm:w-1/5 z-10 sm:relative'}>
+        <div className={!loggedIn ? 'hidden' : 'absolute inset-0 sm:w-1/5 sm:relative'}>
           <Sidebar />
         </div>
         <div className="flex-1">
