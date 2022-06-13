@@ -7,7 +7,7 @@ const HouseDetails = () => {
   const param = useParams();
   const dispatch = useDispatch();
 
-  const house = useSelector((state) => state.HouseReducer);
+  const house = useSelector((state) => state.currentHouse);
   useEffect(() => {
     dispatch(displayHouse(param.id));
   },
