@@ -4,6 +4,7 @@ import { VscTriangleLeft, VscTriangleRight } from 'react-icons/vsc';
 import { useEffect, useState, useRef } from 'react';
 import { displayHouses } from '../redux/actions/houses';
 import Social from '../components/Social';
+import PageHeading from '../components/PageHeading';
 
 const Houses = () => {
   const houses = useSelector((state) => state.HousesReducer);
@@ -34,11 +35,8 @@ const Houses = () => {
   };
 
   return (
-    <div className="container relative">
-      <div className="mt-12 mb-10 sm:text-center">
-        <h2 className="font-bold text-2xl mb-2 ml-8 ">YOUR FAVORITE HOUSES </h2>
-        <p className="text-sm font-semibold ml-20 text-neutral-300 sm:ml-9">Please select a house model</p>
-      </div>
+    <div className="container relative h-screen pt-20 sm:pt-32">
+      <PageHeading title="YOUR FAVOURITE HOUSES" subtitle="Please select a house model" />
 
       <div className="flex gap-7 overflow-hidden w-72 sm:max-w-screen-lg mx-auto sm:w-4/5">
         <div ref={houseCard} className="flex gap-7 w-full">

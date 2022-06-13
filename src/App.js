@@ -9,6 +9,7 @@ import AddReservation from './pages/addReservation';
 import Reservations from './pages/reservations';
 import NewHouse from './pages/newhouse';
 import HouseDetails from './components/HouseDetails';
+import DeleteHouse from './pages/DeleteHouse';
 
 function App() {
   const { authChecked, loggedIn } = useAuth();
@@ -28,7 +29,7 @@ function App() {
               <Route path="/reserve/:id" element={<AddReservation />} />
               <Route path="/reservations" element={<Reservations />} />
               <Route path="/add_house" element={<NewHouse />} />
-              <Route path="/delete_house" element={<h1>DeleteHouse Page</h1>} />
+              <Route path="/delete_house" element={<DeleteHouse />} />
             </Route>
           </Routes>
         </div>

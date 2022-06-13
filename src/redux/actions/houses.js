@@ -26,6 +26,19 @@ export const displayHouses = () => async (dispatch) => {
     price: ele.price,
     city: ele.city,
     image: ele.image,
+    userId: ele.user_id,
   }));
   dispatch(loadHouses(HousesTemp));
+};
+
+export const deleteHouse = (id) => async (dispatch) => {
+  const res = await fetch(`http://localhost:3001/v1/houses/${id}`, {
+    method: 'DELETE',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      Authorization: getToken(),
+    },
+  });
+  if (res.ok) dispatch(displayHouses());
 };
