@@ -3,7 +3,7 @@
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import addHouse from '../redux/actions/house';
+import { addHouse } from '../redux/actions/houses';
 
 const NewHouseForm = () => {
   const { register, handleSubmit } = useForm();

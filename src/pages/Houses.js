@@ -7,7 +7,7 @@ import Social from '../components/Social';
 import PageHeading from '../components/PageHeading';
 
 const Houses = () => {
-  const houses = useSelector((state) => state.HousesReducer);
+  const houses = useSelector((state) => state.houses);
   const [slideIndex, setSlideIndex] = useState(0);
   const dispatch = useDispatch();
   const lenghtHouses = houses.length;

@@ -12,7 +12,7 @@ const reservations = () => {
   },
   []);
 
-  const { data } = useSelector((state) => state.reservations);
+  const reservations = useSelector((state) => state.reservations);
 
   return (
     <div className="container w-4/5 mx-auto h-screen pt-20 sm:pt-32">
@@ -26,7 +26,7 @@ const reservations = () => {
             { name: 'Reservation Owner', selector: (row) => row.user },
           ]
         }
-        data={data}
+        data={reservations}
       />
     </div>
   );

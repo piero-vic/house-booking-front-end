@@ -1,26 +1,8 @@
 import { AUTHENTICATED, NOT_AUTHENTICATED } from '.';
-
-const setToken = (token) => {
-  localStorage.setItem('token', token);
-  localStorage.setItem('lastLoginTime', new Date(Date.now()).getTime());
-};
-
-export const getToken = () => {
-  const now = new Date(Date.now()).getTime();
-  const thirtyMinutes = 1000 * 60 * 30;
-  const timeSinceLastLogin = now - localStorage.getItem('lastLoginTime');
-  if (timeSinceLastLogin < thirtyMinutes) {
-    return localStorage.getItem('token');
-  }
-  return false;
-};
+import { headers, setToken, getToken } from '../../utils';
 
 export const checkAuth = () => (dispatch) => fetch('http://localhost:3001/v1/current_user', {
-  headers: {
-    Accept: 'application/json',
-    'Content-Type': 'application/json',
-    Authorization: getToken(),
-  },
+  headers: { ...headers, Authorization: getToken() },
 }).then((res) => {
   if (res.ok) {
     return res.json().then((user) => dispatch({ type: AUTHENTICATED, payload: user }));
@@ -29,18 +11,13 @@ export const checkAuth = () => (dispatch) => fetch('http://localhost:3001/v1/cur
 });
 
 export const signupUser = (credentials) => (dispatch) => fetch('http://localhost:3001/v1/signup', {
-  method: 'POST',
-  headers: {
-    Accept: 'application/json',
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify({ user: credentials }),
+  method: 'POST', headers, body: JSON.stringify({ user: credentials }),
 }).then((res) => {
   if (res.ok) {
     setToken(res.headers.get('Authorization'));
     return res
       .json()
-      .then((userJson) => dispatch({ type: AUTHENTICATED, payload: userJson }));
+      .then(({ data }) => dispatch({ type: AUTHENTICATED, payload: data }));
   }
   return res.json().then((errors) => {
     dispatch({ type: NOT_AUTHENTICATED });
@@ -49,18 +26,13 @@ export const signupUser = (credentials) => (dispatch) => fetch('http://localhost
 });
 
 export const loginUser = (credentials) => (dispatch) => fetch('http://localhost:3001/v1/login', {
-  method: 'POST',
-  headers: {
-    Accept: 'application/json',
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify({ user: credentials }),
+  method: 'POST', headers, body: JSON.stringify({ user: credentials }),
 }).then((res) => {
   if (res.ok) {
     setToken(res.headers.get('Authorization'));
     return res
       .json()
-      .then((userJson) => dispatch({ type: AUTHENTICATED, payload: userJson }));
+      .then(({ data }) => dispatch({ type: AUTHENTICATED, payload: data }));
   }
   return res.json().then((errors) => {
     dispatch({ type: NOT_AUTHENTICATED });
@@ -70,11 +42,7 @@ export const loginUser = (credentials) => (dispatch) => fetch('http://localhost:
 
 export const logoutUser = () => (dispatch) => fetch('http://localhost:3001/v1/logout', {
   method: 'DELETE',
-  headers: {
-    Accept: 'application/json',
-    'Content-Type': 'application/json',
-    Authorization: getToken(),
-  },
+  headers: { ...headers, Authorization: getToken() },
 }).then((res) => {
   if (res.ok) {
     return dispatch({ type: NOT_AUTHENTICATED });

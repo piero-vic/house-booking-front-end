@@ -1,14 +1,14 @@
 import { combineReducers } from 'redux';
 import reservationsReducer from './reservations';
 import authReducer from './auth';
-import HousesReducer from './houses';
-import HouseReducer from './house';
+import housesReducer from './houses';
+import houseReducer from './house';
 
 const rootReducer = combineReducers({
   auth: authReducer,
-  HousesReducer,
+  houses: housesReducer,
   reservations: reservationsReducer,
-  HouseReducer,
+  currentHouse: houseReducer,
 });
 
 export default rootReducer;

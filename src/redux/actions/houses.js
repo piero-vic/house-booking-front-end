@@ -1,26 +1,12 @@
-import { LOAD_HOUSES } from '.';
-import { getToken } from './auth';
-
-export const loadHouses = (payload) => ({
-  type: LOAD_HOUSES,
-  payload,
-});
-
-const fetchData = async () => {
-  const headers = {
-    Accept: 'application/json',
-    'Content-Type': 'application/json',
-    Authorization: getToken(),
-  };
-  const response = await fetch('http://localhost:3001/v1/houses', { headers });
-  const data = await response.json();
-  return data;
-};
+import { LOAD_HOUSES, DELETE_HOUSE, NEW_HOUSE } from '.';
+import { headers, getToken } from '../../utils';
 
 export const displayHouses = () => async (dispatch) => {
-  const { data } = await fetchData();
-
-  const HousesTemp = data.map((ele) => ({
+  const response = await fetch('http://localhost:3001/v1/houses', {
+    headers: { ...headers, Authorization: getToken() },
+  });
+  const { data } = await response.json();
+  const houses = data.map((ele) => ({
     id: ele.id,
     address: ele.address,
     price: ele.price,
@@ -28,17 +14,38 @@ export const displayHouses = () => async (dispatch) => {
     image: ele.image,
     userId: ele.user_id,
   }));
-  dispatch(loadHouses(HousesTemp));
+
+  dispatch({ type: LOAD_HOUSES, payload: houses });
+};
+
+export const addHouse = (house) => async (dispatch) => {
+  const response = await fetch('http://localhost:3001/v1/houses', {
+    method: 'POST',
+    headers: { ...headers, Authorization: getToken() },
+    body: JSON.stringify(house),
+  });
+
+  if (response.ok) {
+    const { data } = await response.json();
+    dispatch({
+      type: NEW_HOUSE,
+      payload: {
+        id: data.id,
+        address: data.address,
+        price: data.price,
+        city: data.city,
+        image: data.image,
+        userId: data.user_id,
+      },
+    });
+  }
 };
 
 export const deleteHouse = (id) => async (dispatch) => {
-  const res = await fetch(`http://localhost:3001/v1/houses/${id}`, {
+  const response = await fetch(`http://localhost:3001/v1/houses/${id}`, {
     method: 'DELETE',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-      Authorization: getToken(),
-    },
+    headers: { ...headers, Authorization: getToken() },
   });
-  if (res.ok) dispatch(displayHouses());
+
+  if (response.ok) dispatch({ type: DELETE_HOUSE, payload: id });
 };

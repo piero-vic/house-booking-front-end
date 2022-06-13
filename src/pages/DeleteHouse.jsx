@@ -6,7 +6,7 @@ import { displayHouses, deleteHouse } from '../redux/actions/houses';
 import PageHeading from '../components/PageHeading';
 
 const DeleteHouse = () => {
-  const houses = useSelector((state) => state.HousesReducer);
+  const houses = useSelector((state) => state.houses);
   const dispatch = useDispatch();
 
   useEffect(() => {
