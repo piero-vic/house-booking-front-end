@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams, NavLink } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { displayHouse } from '../redux/actions/house';
 
@@ -22,7 +22,8 @@ const HouseDetails = () => {
           <div className="text-xs font-extrabold">{house.city}</div>
         </div>
         {Object.keys(house).map((keyName, i) => (
-          <table className={`${(i === 0 || i === 1) ? 'hidden' : 'even:bg-stone-200 text-xs text-slate-600 font-medium py-1 px-2 last-of-type:hidden relative flex min-w-full w-40'}`} key={keyName}>
+          <table className={`${(i === 0 || i === 1 || i === 2) ? 'hidden' : 'odd:bg-stone-200 text-xs text-slate-600 font-medium py-1 px-2 last-of-type:hidden relative flex min-w-full w-40'}`} key={keyName}>
+
             <td>
               {keyName.charAt(0).toUpperCase() + keyName.slice(1).replaceAll('_', ' ')}
             </td>
@@ -32,9 +33,9 @@ const HouseDetails = () => {
           </table>
         ))}
         <div className="text-center sm:text-right">
-          <NavLink id={house.id} to="/reserve">
+          <Link id={house.id} to={`/reserve/${house.id}`}>
             <button className="text-sm font-semibold px-10 py-3 sm:mt-10 mt-5 leading-5 tracking-wide bg-lime-500 text-white rounded-full" type="button">Reserve</button>
-          </NavLink>
+          </Link>
         </div>
       </div>
     </div>
