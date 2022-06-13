@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import AddReservation from './pages/addReservation';
 import Reservations from './pages/reservations';
+import NewHouse from './pages/newhouse';
 import HouseDetails from './components/HouseDetails';
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
               <Route path="/houses/:id" element={<HouseDetails />} />
               <Route path="/reserve/:id" element={<AddReservation />} />
               <Route path="/reservations" element={<Reservations />} />
-              <Route path="/add_house" element={<h1> add hosue</h1>} />
+              <Route path="/add_house" element={<NewHouse />} />
               <Route path="/delete_house" element={<h1>DeleteHouse Page</h1>} />
             </Route>
           </Routes>
