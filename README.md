@@ -67,3 +67,7 @@ Give a ⭐️ if you like this project!
 
 - Microverse
 - [Murat Korkmaz](https://www.behance.net/muratk) on Behance the author of the [original design](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign)
+
+## 📝 License
+
+This project is [MIT](./LICENSE) licensed.
