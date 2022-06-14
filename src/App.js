@@ -16,7 +16,7 @@ function App() {
   return (
     <Router>
       <div className={loggedIn ? 'sm:flex' : null}>
-        <Sidebar />
+        {loggedIn ? <Sidebar /> : null}
         <div className="flex-1">
           <Routes>
             <Route path="/login" element={<Login loggedIn={loggedIn} />} />
