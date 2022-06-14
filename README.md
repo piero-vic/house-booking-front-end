@@ -3,17 +3,14 @@
 ![](https://img.shields.io/static/v1?label=BY&message=Sahar&color=red)
 ![](https://img.shields.io/static/v1?label=BY&message=Piero&color=blue)
 ![](https://img.shields.io/static/v1?label=BY&message=Aime&color=green)
+
 # Rent me
 
 > Rent me is a responsive app that lists houses. A user can selects a specific house, see the details page with its full description, and can click the "Reserve" button to reserve it. The user can also access the "Reserve" page from the navigation panel, add or delete a house.
 
-### Preview
-
-![This is gif of our project](To Be added)
-
 ## Live Demo
 
-You can see [the app live here](To Be added)
+You can see [the app live here](https://rent-me-capstone-project.netlify.app/)
 
 ## Back-end Repository 
 
@@ -23,54 +20,71 @@ You can see [the app live here](To Be added)
 
 - React
 - Redux
-- Tailwind
+- TailwindCSS
+
+## Tools used
+
+- Redux Dev Tools
+
 ## Setup
 
-### Clone this repository
+- Clone this repository
 
 ```bash
 $ git clone git@github.com:piero-vic/house-booking-front-end.git
 $ cd house-booking-front-end
 ```
 
-### Run project
+- Make sure you're also running the back-end server on localhost:3001.
+
+- Run the project
 
 ```bash
 $ npm install
 $ npm start
 ```
 
-### Open http://localhost:3000 in your browser.
+- Open http://localhost:3000 in your browser.
 
 ## Authors (4)
 
-👤 **Sahar Abdel Samad**
-
-- GitHub: [@sahar-abdelsamad](https://github.com/Sahar-AbdelSamad)
-- Twitter: [@abdelsamadsahar](https://twitter.com/AbdelSamadSahar)
-- LinkedIn: [abdel-samad-sahar](https://www.linkedin.com/in/sahar-abdel-samad/)
-
 👤 **Reem Janina**
 
-- GitHub: [@Reem-lab](https://github.com/Reem-lab)
-- Twitter: [@Rem79940127](https://twitter.com/Rem79940127)
-- LinkedIn: [reem-janina](https://www.linkedin.com/in/reem-janina-ab74ab21a/)
+ Platform | Badge |
+ --- | --- |
+ **GitHub**  | [@Reem-lab](https://github.com/Reem-lab)
+ **Twitter** | [Rem79940127](https://twitter.com/Rem79940127)
+ **LinkdIn** | [reem-janina](https://www.linkedin.com/in/reem-janina-ab74ab21a/)
 
-👤 **Aime Malaika**
-- GitHub: [@aimemalaika](https://github.com/aimemalaika)
-- Twitter: [@aimemalaika](https://twitter.com/Aime_Malaika)
-- LinkedIn: [aimemalaika](https://linkedin.com/in/aimemalaika)
+ 👤 **Sahar Abdel Samad**
 
-👤 **Piero Lescano**
+ Platform | Badge |
+ --- | --- |
+ **GitHub**  | [Sahar-AbdelSamad](https://github.com/Sahar-AbdelSamad)
+ **Twitter** | [@AbdelSamadSaha](https://twitter.com/AbdelSamadSahar)
+ **LinkdIn** | [Sahar-Abdel-Samad](https://www.linkedin.com/in/sahar-abdel-samad/)
 
-- GitHub: [@piero-vic](https://github.com/piero-vic)
-- Twitter: [@v1ccenzo](https://twitter.com/v1ccenzo)
-- LinkedIn: [piero-lescano](https://linkedin.com/in/piero-lescano)
+ 👤 **Piero Lescano**
+
+ Platform | Badge |
+ --- | --- |
+ **GitHub**  | [@piero-vic](https://github.com/piero-vic)
+ **Twitter** | [@v1ccenzo](https://twitter.com/v1ccenzo)
+ **LinkdIn** | [piero-lescano](https://www.linkedin.com/in/piero-lescano/)
+
+ 👤 **Aime Malaika**
+
+ Platform | Badge |
+ --- | --- |
+ **GitHub**  | [@aimemalaika](https://github.com/aimemalaika)
+ **Twitter** | [@Aime_Malaika](https://twitter.com/Aime_Malaika)
+ **LinkdIn** | [aimemalaika](https://www.linkedin.com/in/aimemalaika/)
 
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
+
 ## Show your support
 
 Give a ⭐️ if you like this project!
