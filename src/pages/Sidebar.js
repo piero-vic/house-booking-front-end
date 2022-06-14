@@ -23,7 +23,7 @@ function Sidebar() {
   };
 
   return (
-    <div className={`text-slate-600 sm:border-r-2 z-10 relative ${sidebar ? 'h-screen' : 'max-h-min'}`}>
+    <div className={`text-slate-600 sm:w-1/5 sm:border-r-2 z-10 relative ${sidebar ? 'h-screen' : 'max-h-min'}`}>
       <button type="button" className="sm:hidden m-3 absolute" onClick={showSidebar}>
         {!sidebar ? (
           <svg
@@ -55,8 +55,8 @@ function Sidebar() {
 
       <nav
         className={
-        !sidebar ? 'sm:flex flex-col h-full hidden'
-          : 'flex flex-col h-full bg-white pt-7 sm:pt-0'
+        !sidebar ? 'sm:flex flex-col h-scree hidden'
+          : 'flex flex-col h-scree bg-white pt-7 sm:pt-0'
       }
       >
         <NavLink className="m-4 hidden sm:flex" to="/">
