@@ -2,7 +2,7 @@ import { LOAD_HOUSES, DELETE_HOUSE, NEW_HOUSE } from '.';
 import { headers, getToken } from '../../utils';
 
 export const displayHouses = () => async (dispatch) => {
-  const response = await fetch('http://localhost:3001/v1/houses', {
+  const response = await fetch(`${process.env.REACT_APP_API_URL}/v1/houses`, {
     headers: { ...headers, Authorization: getToken() },
   });
   const { data } = await response.json();
@@ -19,7 +19,7 @@ export const displayHouses = () => async (dispatch) => {
 };
 
 export const addHouse = (house) => async (dispatch) => {
-  const response = await fetch('http://localhost:3001/v1/houses', {
+  const response = await fetch(`${process.env.REACT_APP_API_URL}/v1/houses`, {
     method: 'POST',
     headers: { ...headers, Authorization: getToken() },
     body: JSON.stringify(house),
@@ -42,7 +42,7 @@ export const addHouse = (house) => async (dispatch) => {
 };
 
 export const deleteHouse = (id) => async (dispatch) => {
-  const response = await fetch(`http://localhost:3001/v1/houses/${id}`, {
+  const response = await fetch(`${process.env.REACT_APP_API_URL}/v1/houses/${id}`, {
     method: 'DELETE',
     headers: { ...headers, Authorization: getToken() },
   });

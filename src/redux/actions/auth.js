@@ -1,7 +1,7 @@
 import { AUTHENTICATED, NOT_AUTHENTICATED } from '.';
 import { headers, setToken, getToken } from '../../utils';
 
-export const checkAuth = () => (dispatch) => fetch('http://localhost:3001/v1/current_user', {
+export const checkAuth = () => (dispatch) => fetch(`${process.env.REACT_APP_API_URL}/v1/current_user`, {
   headers: { ...headers, Authorization: getToken() },
 }).then((res) => {
   if (res.ok) {
@@ -10,7 +10,7 @@ export const checkAuth = () => (dispatch) => fetch('http://localhost:3001/v1/cur
   return Promise.reject(dispatch({ type: NOT_AUTHENTICATED }));
 });
 
-export const signupUser = (credentials) => (dispatch) => fetch('http://localhost:3001/v1/signup', {
+export const signupUser = (credentials) => (dispatch) => fetch(`${process.env.REACT_APP_API_URL}/v1/signup`, {
   method: 'POST', headers, body: JSON.stringify({ user: credentials }),
 }).then((res) => {
   if (res.ok) {
@@ -25,7 +25,7 @@ export const signupUser = (credentials) => (dispatch) => fetch('http://localhost
   });
 });
 
-export const loginUser = (credentials) => (dispatch) => fetch('http://localhost:3001/v1/login', {
+export const loginUser = (credentials) => (dispatch) => fetch(`${process.env.REACT_APP_API_URL}/v1/login`, {
   method: 'POST', headers, body: JSON.stringify({ user: credentials }),
 }).then((res) => {
   if (res.ok) {
@@ -40,7 +40,7 @@ export const loginUser = (credentials) => (dispatch) => fetch('http://localhost:
   });
 });
 
-export const logoutUser = () => (dispatch) => fetch('http://localhost:3001/v1/logout', {
+export const logoutUser = () => (dispatch) => fetch(`${process.env.REACT_APP_API_URL}/v1/logout`, {
   method: 'DELETE',
   headers: { ...headers, Authorization: getToken() },
 }).then((res) => {
