@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.absolute {
+  z-index: 100;
+}
+
+.slider-buttons {
+  z-index: 90;
+}
