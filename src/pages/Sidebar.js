@@ -23,7 +23,9 @@ function Sidebar() {
   };
 
   return (
-    <div className="text-slate-600 h-screen sm:border-r-2 ">
+    <div className={sidebar ? 'text-slate-600 h-screen sm:border-r-2 z-10 relative'
+      : 'text-slate-600 max-h-min sm:border-r-2 z-10 relative sm:hidden'}
+    >
 
       <button type="button" className="sm:hidden m-3 absolute" onClick={showSidebar}>
         {!sidebar ? (
