@@ -4,7 +4,7 @@ import { headers, getToken } from '../../utils';
 export const getHouse = (payload) => ({ type: GET_HOUSE, payload });
 
 export const displayHouse = (id) => async (dispatch) => {
-  const response = await fetch(`http://localhost:3001/v1/houses/${id}`, {
+  const response = await fetch(`${process.env.REACT_APP_API_URL}/v1/houses/${id}`, {
     headers: {
       ...headers,
       Authorization: getToken(),
