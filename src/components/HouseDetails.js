@@ -14,7 +14,7 @@ const HouseDetails = () => {
   []);
 
   return (
-    <div className="w-11/12 mx-auto gap-6 mt-10 sm:mt-24 sm:flex">
+    <div className="w-11/12 mx-auto pt-20 gap-6 sm:flex">
       <img className="h-4/5 w-4/5 mb-5 sm:min-w-0 min-w-full" src={house.image} alt="house" />
       <div className="items-start">
         <div className="text-right mb-4 text-gray-800">

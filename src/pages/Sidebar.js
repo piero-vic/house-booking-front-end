@@ -23,12 +23,11 @@ function Sidebar() {
   };
 
   return (
-    <div className="text-slate-600 h-screen sm:border-r-2 ">
-
+    <div className={`text-slate-600 sm:w-1/5 z-10 relative ${sidebar ? 'h-screen' : 'max-h-min'}`}>
       <button type="button" className="sm:hidden m-3 absolute" onClick={showSidebar}>
         {!sidebar ? (
           <svg
-            className="w-6 h-6 text-gray-500"
+            className="w-6 h-6 text-gray-500 z-20"
             fill="none"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -40,7 +39,7 @@ function Sidebar() {
           </svg>
         ) : (
           <svg
-            className="w-6 h-6 text-gray-500"
+            className="w-6 h-6 text-gray-500 z-20"
             fill="none"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -55,10 +54,7 @@ function Sidebar() {
       </button>
 
       <nav
-        className={
-        !sidebar ? 'sm:flex flex-col h-full hidden'
-          : 'flex flex-col h-full bg-white pt-7 sm:pt-0'
-      }
+        className={`${sidebar ? 'flex' : 'hidden sm:flex'} flex-col w-full sm:w-1/5 h-screen bg-white sm:border-r-2 pt-7 sm:pt-0 sm:fixed`}
       >
         <NavLink className="m-4 hidden sm:flex" to="/">
           <img src={logo} alt="logo" width={100} />

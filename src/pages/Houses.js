@@ -72,12 +72,12 @@ const Houses = () => {
         </div>
         <button
           type="button"
-          className="bg-lime-400 rounded-tl-3xl rounded-bl-3xl absolute right-0 top-1/3 flex items-center pl-2 sm:pl-4 w-9 h-6 sm:w-20 sm:h-11"
+          className="bg-lime-400 slider-buttons rounded-tl-3xl rounded-bl-3xl absolute right-0 top-1/3 flex items-center pl-2 sm:pl-4 w-9 h-6 sm:w-20 sm:h-11"
           onClick={nextSlide}
         >
           <VscTriangleRight className="text-white brightness-50 opacity-15" />
         </button>
-        <button type="button" onClick={prevSlide} className="bg-slate-300 justify-end flex items-center rounded-br-3xl rounded-tr-2xl absolute top-1/3 pr-2 sm:pr-4 w-9 h-6 left-0 sm:w-20 sm:h-11">
+        <button type="button" onClick={prevSlide} className="bg-slate-300 slider-buttons justify-end flex items-center rounded-br-3xl rounded-tr-2xl absolute top-1/3 pr-2 sm:pr-4 w-9 h-6 left-0 sm:w-20 sm:h-11">
           <VscTriangleLeft className="brightness-50 opacity-15 text-white " />
         </button>
       </div>
