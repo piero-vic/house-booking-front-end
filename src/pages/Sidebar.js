@@ -23,10 +23,7 @@ function Sidebar() {
   };
 
   return (
-    <div className={sidebar ? 'text-slate-600 h-screen sm:border-r-2 z-10 relative'
-      : 'text-slate-600 max-h-min sm:border-r-2 z-10 relative sm:hidden'}
-    >
-
+    <div className={`text-slate-600 sm:border-r-2 z-10 relative ${sidebar ? 'h-screen' : 'max-h-min'}`}>
       <button type="button" className="sm:hidden m-3 absolute" onClick={showSidebar}>
         {!sidebar ? (
           <svg
