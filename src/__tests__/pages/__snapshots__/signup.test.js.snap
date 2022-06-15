@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<main
+  className="min-h-screen min-w-full bg-center bg-cover bg-no-repeat bg-login"
+>
+  <div
+    className="min-h-screen min-w-full grid place-items-center bg-lime-500 bg-opacity-80"
+  >
+    <div
+      className="w-3/4 md:w-1/2"
+    >
+      <div
+        className="border-b border-b-white p-5 mb-5 mx-auto w-10/12"
+      >
+        <h2
+          className="text-white text-center font-bold text-4xl"
+        >
+          Sign Up
+        </h2>
+      </div>
+      <form
+        className="flex flex-col gap-5 items-center"
+        onSubmit={[Function]}
+      >
+        <div
+          className="w-full"
+        >
+          <input
+            className="w-full bg-white py-2 px-4 rounded-3xl"
+            name="username"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Username"
+            type="text"
+          />
+        </div>
+        <div
+          className="w-full"
+        >
+          <input
+            className="w-full bg-white py-2 px-4 rounded-3xl"
+            name="email"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Email"
+            type="email"
+          />
+        </div>
+        <div
+          className="w-full"
+        >
+          <input
+            className="w-full bg-white py-2 px-4 rounded-3xl"
+            name="password"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Password"
+            type="password"
+          />
+        </div>
+        <input
+          className="w-1/2 bg-lime-500 text-white py-2 px-4 border-2 border-white rounded-3xl font-bold"
+          type="submit"
+          value="Sign Up"
+        />
+        <a
+          className="w-1/2 bg-white text-lime-500 py-2 px-4 border-2 border-lime-500 rounded-3xl font-bold text-center"
+          href="/login"
+          onClick={[Function]}
+        >
+          Log In
+        </a>
+      </form>
+    </div>
+  </div>
+</main>
+`;
