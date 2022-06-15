@@ -1,0 +1,213 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="flex flex-col items-center justify-center"
+>
+  <form
+    className="w-full"
+    onSubmit={[Function]}
+  >
+    <div
+      className="flex flex-wrap -mx-3 mb-6"
+    >
+      <div
+        className="w-full md:w-1/2 px-3 mb-6 md:mb-0"
+      >
+        <label
+          className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+          htmlFor="house-address"
+        >
+          Address
+        </label>
+        <input
+          className="appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          id="house-address"
+          name="address"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Address"
+          type="text"
+        />
+      </div>
+      <div
+        className="w-full md:w-1/2 px-3"
+      >
+        <label
+          className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+          htmlFor="house-city"
+        >
+          City
+        </label>
+        <input
+          className="appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          id="house-city"
+          name="city"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="City"
+          type="text"
+        />
+      </div>
+    </div>
+    <div
+      className="flex flex-wrap -mx-3 mb-6"
+    >
+      <div
+        className="w-full md:w-1/2 px-3 mb-6 md:mb-0"
+      >
+        <label
+          className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+          htmlFor="house-zipcode"
+        >
+          Zip Code
+        </label>
+        <input
+          className="appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          id="house-zipcode"
+          name="zip_code"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Zip Code"
+          type="number"
+        />
+      </div>
+      <div
+        className="w-full md:w-1/2 px-3"
+      >
+        <label
+          className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+          htmlFor="house-image"
+        >
+          Image
+        </label>
+        <input
+          className="appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          id="house-image"
+          name="image"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Image"
+          type="url"
+        />
+      </div>
+    </div>
+    <div
+      className="flex flex-wrap -mx-3 mb-6"
+    >
+      <div
+        className="w-full md:w-1/2 px-3 mb-6 md:mb-0"
+      >
+        <label
+          className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+          htmlFor="house-room-no"
+        >
+          Number of Rooms
+        </label>
+        <input
+          className="appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          id="house-room-no"
+          name="rooms"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Number of Rooms"
+          type="number"
+        />
+      </div>
+      <div
+        className="w-full md:w-1/2 px-3"
+      >
+        <label
+          className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+          htmlFor="house-bathrooms-no"
+        >
+          Number of Bathrooms
+        </label>
+        <input
+          className="appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          id="house-bathrooms-no"
+          name="bathrooms"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Number of Bathrooms"
+          type="number"
+        />
+      </div>
+    </div>
+    <div
+      className="flex flex-wrap -mx-3 mb-6"
+    >
+      <div
+        className="w-full md:w-1/2 px-3 mb-6 md:mb-0"
+      >
+        <label
+          className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+          htmlFor="house-construction-year"
+        >
+          Construction Year
+        </label>
+        <input
+          className="appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          id="house-construction-year"
+          name="construction_year"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Construction Year"
+          type="number"
+        />
+      </div>
+      <div
+        className="w-full md:w-1/2 px-3"
+      >
+        <label
+          className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+          htmlFor="house-pricing"
+        >
+          Price
+        </label>
+        <input
+          className="appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          id="house-pricing"
+          name="price"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Price"
+          type="number"
+        />
+      </div>
+    </div>
+    <div
+      className="flex flex-wrap -mx-3 mb-6"
+    >
+      <div
+        className="w-full px-3"
+      >
+        <label
+          className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+          htmlFor="house-sarounding"
+        >
+          Sarounding
+        </label>
+        <textarea
+          className="appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          id="house-sarounding"
+          name="surroundings"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Sarounding"
+        />
+      </div>
+    </div>
+    <div
+      className="flex flex-wrap pl-4 -mx-3 mb-6"
+    >
+      <button
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        type="submit"
+      >
+        Add House
+      </button>
+    </div>
+  </form>
+</div>
+`;
