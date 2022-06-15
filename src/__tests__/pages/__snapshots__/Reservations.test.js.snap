@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="container w-4/5 mx-auto h-screen pt-20 sm:pt-32"
+>
+  <div
+    className="mb-5"
+  >
+    <h2
+      className="text-center text-black font-black text-3xl"
+    >
+      RESERVATIONS
+    </h2>
+    <p
+      className="text-center text-gray-500 font-semibold text-1xl"
+    >
+      Take a look at your reservations
+    </p>
+  </div>
+  <div
+    className="sc-dmRaPn gelpCx"
+  >
+    <div
+      className="sc-fLlhyt ifOHjV"
+    >
+      <div
+        className="sc-bczRLJ eSTlnH rdt_Table"
+        disabled={false}
+        role="table"
+      >
+        <div
+          className="sc-ivTmOn fwKvpK"
+        >
+          <div
+            style={
+              Object {
+                "padding": "24px",
+              }
+            }
+          >
+            There are no records to display
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
