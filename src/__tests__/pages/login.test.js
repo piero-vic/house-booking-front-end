@@ -9,7 +9,7 @@ it('renders correctly', () => {
     .create(
       <Provider store={store}>
         <Router>
-          <Login />
+          <Login loggedIn={false} />
         </Router>
       </Provider>,
     )
