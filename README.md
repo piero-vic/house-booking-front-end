@@ -44,6 +44,12 @@ $ npm install
 $ npm start
 ```
 
+- Run tests
+
+```bash
+$ npm run test
+```
+
 - Open http://localhost:3000 in your browser.
 
 ## Authors (4)
