@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="w-11/12 mx-auto pt-20 gap-6 sm:flex"
+>
+  <img
+    alt="house"
+    className="h-4/5 w-4/5 mb-5 sm:min-w-0 min-w-full"
+  />
+  <div
+    className="items-start"
+  >
+    <div
+      className="text-right mb-4 text-gray-800"
+    >
+      <div
+        className="font-semibold text-2xl tracking-tighter"
+      />
+      <div
+        className="text-xs font-extrabold"
+      />
+    </div>
+    <div
+      className="text-center sm:text-right"
+    >
+      <a
+        href="/reserve/undefined"
+        onClick={[Function]}
+      >
+        <button
+          className="text-sm font-semibold px-10 py-3 sm:mt-10 mt-5 leading-5 tracking-wide bg-lime-500 text-white rounded-full"
+          type="button"
+        >
+          Reserve
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+`;
