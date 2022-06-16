@@ -13,7 +13,7 @@ const ReservationForm = () => {
   const { register, handleSubmit } = useForm();
 
   const onFormSubmit = async (data) => {
-    const response = await fetch('http://localhost:3001/v1/reservations', {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/v1/reservations`, {
       method: 'POST',
       headers: {
         ...headers,
