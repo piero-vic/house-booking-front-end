@@ -8,6 +8,12 @@
 
 > Rent me is a responsive app that lists houses. A user can selects a specific house, see the details page with its full description, and can click the "Reserve" button to reserve it. The user can also access the "Reserve" page from the navigation panel, add or delete a house.
 
+## Kanban board
+
+- [Link to the initial state of our Kanban board](https://user-images.githubusercontent.com/87965534/171515644-043c6210-3210-40ff-ad71-9a1ca5c5dbdb.png)
+- [Link to the final state of our Kanban board](https://github.com/Reem-lab/house-booking-back-end/projects/1)
+- [Our team consist of 4 members](#authors)
+
 ## Live Demo
 
 You can see [the app live here](https://rent-me-capstone-project.netlify.app/)
@@ -52,7 +58,7 @@ $ npm run test
 
 - Open http://localhost:3000 in your browser.
 
-## Authors (4)
+## Authors
 
 👤 **Reem Janina**
 
